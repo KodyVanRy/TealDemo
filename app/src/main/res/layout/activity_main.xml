@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kopperkow.soccerstats.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/ic_wb_cloudy_white_36dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/imageView"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:text="Weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView"
+                    android:textSize="18sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignTop="@+id/imageView"
+                    android:layout_alignBottom="@+id/imageView"
+                    android:gravity="center_vertical" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_below="@+id/imageView"
+                    android:layout_marginStart="14dp">
+
+                    <ImageView
+                        android:src="@drawable/weather_clear"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:id="@+id/imageView2"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:text="Cottonwood Heights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/imageView2"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:text="79"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView2"
+                        android:layout_toEndOf="@+id/imageView2"
+                        android:id="@+id/textView3" />
+
+                    <TextView
+                        android:text="Clear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView3"
+                        android:layout_toEndOf="@+id/imageView2"
+                        android:id="@+id/textView4" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/imageView3"
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:layout_marginStart="14dp">
+
+                    <Button
+                        android:text="Add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button2"
+                        android:layout_weight="1"
+                        android:onClick="onClickAddPlayer" />
+
+                    <Button
+                        android:text="View"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/colorAccent"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <ImageView
+                    android:src="@drawable/ic_person_white_36dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/imageView3"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:text="Players"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView7"
+                    android:textSize="18sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignTop="@+id/imageView3"
+                    android:layout_alignBottom="@+id/imageView3"
+                    android:gravity="center_vertical" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/imageView4"
+                    android:layout_toEndOf="@+id/imageView4"
+                    android:layout_marginStart="14dp">
+
+                    <Button
+                        android:text="Draw Plays"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button3"
+                        android:layout_weight="1"
+                        android:onClick="onClickDrawPlays" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <ImageView
+                    android:src="@drawable/ic_assignment_white_36dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/imageView4"
+                    android:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:text="Coaches Corner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView8"
+                    android:textSize="18sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/imageView4"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignTop="@+id/imageView4"
+                    android:layout_alignBottom="@+id/imageView4"
+                    android:gravity="center_vertical" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
