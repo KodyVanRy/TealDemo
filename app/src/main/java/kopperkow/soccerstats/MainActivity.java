@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import kopperkow.soccerstats.view.DrawableUtil;
+import kopperkow.soccerstats.view.SoccerPlayDrawingView;
 
 public class MainActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     RequestQueue requestQueue;
     TextView cityNameTextView, temperatureTextView, weatherTextView;
     ImageView weatherImageView;
+    SoccerPlayDrawingView drawingView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         temperatureTextView = (TextView) findViewById(R.id.textview_temperature);
         weatherTextView = (TextView) findViewById(R.id.textview_weather);
         weatherImageView = (ImageView) findViewById(R.id.imageview_weather);
+        drawingView = (SoccerPlayDrawingView) findViewById(R.id.drawing_view);
     }
 
     private void setupWeather() {
@@ -52,12 +55,12 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         startActivity(new Intent(this, AddPlayerActivity.class));
     }
 
-    public void onClickDrawPlays(View view) {
-        startActivity(new Intent(this, DrawingActivity.class));
-    }
-
     public void onClickViewPlayers(View view) {
         startActivity(new Intent(this, PlayerInfoListActivity.class));
+    }
+
+    public void onClickClear(View view) {
+        drawingView.clear();
     }
 
     @Override

@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:background="@color/transparent"
         android:backgroundTint="@color/transparent"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorAccent"
+        android:onClick="onClickAddPlayer"/>
 
     <ScrollView
         android:layout_above="@id/add_button"

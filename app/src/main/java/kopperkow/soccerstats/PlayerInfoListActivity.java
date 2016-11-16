@@ -43,6 +43,7 @@ public class PlayerInfoListActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitle(getTitle());
 
         View recyclerView = findViewById(R.id.playerinfo_list);

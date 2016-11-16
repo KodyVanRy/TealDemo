@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import kopperkow.soccerstats.R;
 import kopperkow.soccerstats.model.PlayerContent;
@@ -27,10 +28,16 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public void onClickAddPlayer(View view) {
-        if (name.getText().toString().length() <= 0)
+        if (name.getText().toString().length() <= 0) {
             nameLayout.setError("Must be filled");
-        if (jerseyNum.getText().toString().length() <= 0)
+            return;
+        }
+        if (jerseyNum.getText().toString().length() <= 0) {
             jerseyLayout.setError("Must be filled");
-        PlayerContent.addItem(new PlayerContent.Player(jerseyNum.getText().toString(), name.getText().toString(), PlayerContent.makeDetails(5), PlayerContent.getRandomColor()));
+            return;
+        }
+        PlayerContent.addItem(new PlayerContent.Player(jerseyNum.getText().toString(), name.getText().toString(), PlayerContent.makeDetails(5, jerseyNum.getText().toString()), PlayerContent.getRandomColor()));
+        Toast.makeText(this, name.getText().toString() + " succesfully added", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }
