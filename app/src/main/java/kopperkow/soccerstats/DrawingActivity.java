@@ -1,12 +1,12 @@
 package kopperkow.soccerstats;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
-import kopperkow.soccerstats.R;
 import kopperkow.soccerstats.view.SoccerPlayDrawingView;
 
-public class DrawingActivity extends Activity {
+public class DrawingActivity extends AppCompatActivity {
 
     SoccerPlayDrawingView drawingView;
 
@@ -15,5 +15,9 @@ public class DrawingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing);
         drawingView = (SoccerPlayDrawingView) findViewById(R.id.drawing_view);
+    }
+
+    public void onClickClear(View view) {
+        drawingView.clear();
     }
 }

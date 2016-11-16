@@ -96,7 +96,6 @@ public class SoccerPlayDrawingView extends View {
 
     public void clear() {
         bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
-        canvas.drawColor(Color.WHITE);
         canvas = new Canvas(bitmap);
         invalidate();
     }

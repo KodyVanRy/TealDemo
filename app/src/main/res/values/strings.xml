@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SoccerStats</string>
+    <string name="title_playerinfo_list">Players</string>
+    <string name="title_playerinfo_detail">PlayerInfo Detail</string>
+    <string name="name">Name</string>
+    <string name="player_num">Player #</string>
+    <string name="ic_person_white">ic_person_white</string>
+    <string name="player_details">Player Details</string>
+    <string name="shun">shun</string>
+    <string name="just_for_fun">Just for Fun</string>
 </resources>

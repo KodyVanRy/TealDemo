@@ -128,7 +128,8 @@
                         android:id="@+id/button"
                         android:layout_weight="1"
                         android:backgroundTint="@color/colorAccent"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"
+                        android:onClick="onClickViewPlayers"/>
                 </LinearLayout>
 
                 <ImageView

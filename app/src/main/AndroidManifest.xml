@@ -27,7 +27,21 @@
         <activity android:name=".DrawingActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" /></activity>
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".PlayerInfoListActivity"
+            android:label="@string/title_playerinfo_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".PlayerInfoDetailActivity"
+            android:label="@string/title_playerinfo_detail"
+            android:parentActivityName=".PlayerInfoListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="kopperkow.soccerstats.PlayerInfoListActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -56,6 +56,10 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         startActivity(new Intent(this, DrawingActivity.class));
     }
 
+    public void onClickViewPlayers(View view) {
+        startActivity(new Intent(this, PlayerInfoListActivity.class));
+    }
+
     @Override
     public void onResponse(JSONObject response) {
         String city = "";
