@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -15,11 +17,15 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import kopperkow.soccerstats.view.DrawableUtil;
+
 public class MainActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
     static final String COTTONWOOD_HEIGHTS_REQUEST = "http://api.wunderground.com/api/b126e4e263fe3435/conditions/q/UT/Cottonwood_Heights.json";
 
     RequestQueue requestQueue;
+    TextView cityNameTextView, temperatureTextView, weatherTextView;
+    ImageView weatherImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +37,10 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     }
 
     private void setupView() {
-
+        cityNameTextView = (TextView) findViewById(R.id.textview_city_name);
+        temperatureTextView = (TextView) findViewById(R.id.textview_temperature);
+        weatherTextView = (TextView) findViewById(R.id.textview_weather);
+        weatherImageView = (ImageView) findViewById(R.id.imageview_weather);
     }
 
     private void setupWeather() {
@@ -56,16 +65,20 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         try {
             JSONObject currentObservation = getCurrentObservationFromJson(response);
             if (currentObservation != null) {
-                city = currentObservation.getJSONObject("displayLocation").getString("city");
+                city = currentObservation.getJSONObject("display_location").getString("city");
                 tempF = currentObservation.getString("temp_f");
                 weather = currentObservation.getString("weather");
                 weatherIconUrl = currentObservation.getString("icon_url");
-
-
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        cityNameTextView.setText(city);
+        temperatureTextView.setText(tempF);
+        weatherTextView.setText(weather);
+        weatherImageView.setImageResource(DrawableUtil.getDrawableIdFromUrlString(weatherIconUrl));
+        findViewById(R.id.progressBar).setVisibility(View.GONE);
+        findViewById(R.id.weather_info_layout).setVisibility(View.VISIBLE);
     }
 
     private JSONObject getCurrentObservationFromJson(JSONObject j) {
@@ -81,7 +94,12 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
     @Override
     public void onErrorResponse(VolleyError error) {
-
+        cityNameTextView.setText("");
+        temperatureTextView.setText("");
+        weatherTextView.setText("");
+        weatherImageView.setImageResource(DrawableUtil.getDrawableIdFromUrlString(""));
+        findViewById(R.id.progressBar).setVisibility(View.GONE);
+        findViewById(R.id.weather_info_layout).setVisibility(View.VISIBLE);
     }
 
     // http://api.wunderground.com/api/b126e4e263fe3435/conditions/q/UT/Cottonwood_Heights.json

@@ -8,7 +8,7 @@ import kopperkow.soccerstats.R;
 
 public class DrawableUtil {
 
-    public int getDrawableIdFromUrlString(String url) {
+    public static int getDrawableIdFromUrlString(String url) {
         if (url.contains("chanceflurries")) {
             return R.drawable.weather_snow;
         } else if (url.contains("snow")) {

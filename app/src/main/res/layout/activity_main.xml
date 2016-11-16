@@ -42,44 +42,55 @@
                     android:layout_alignBottom="@+id/imageView"
                     android:gravity="center_vertical" />
 
+                <ProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_below="@+id/imageView"
+                    android:layout_marginStart="14dp"
+                    android:id="@+id/progressBar" />
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@+id/imageView"
                     android:layout_below="@+id/imageView"
-                    android:layout_marginStart="14dp">
+                    android:layout_marginStart="14dp"
+                    android:visibility="gone"
+                    android:id="@+id/weather_info_layout">
 
                     <ImageView
                         android:src="@drawable/weather_clear"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:id="@+id/imageView2"
+                        android:id="@+id/imageview_weather"
                         android:layout_marginEnd="8dp" />
 
                     <TextView
                         android:text="Cottonwood Heights"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView2"
+                        android:id="@+id/textview_city_name"
                         android:layout_alignParentTop="true"
-                        android:layout_toEndOf="@+id/imageView2"
+                        android:layout_toEndOf="@+id/imageview_weather"
                         android:layout_marginTop="8dp" />
 
                     <TextView
                         android:text="79"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView2"
-                        android:layout_toEndOf="@+id/imageView2"
-                        android:id="@+id/textView3" />
+                        android:layout_below="@+id/textview_city_name"
+                        android:layout_toEndOf="@+id/imageview_weather"
+                        android:id="@+id/textview_temperature" />
 
                     <TextView
                         android:text="Clear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView3"
-                        android:layout_toEndOf="@+id/imageView2"
-                        android:id="@+id/textView4" />
+                        android:layout_below="@+id/textview_temperature"
+                        android:layout_toEndOf="@+id/imageview_weather"
+                        android:id="@+id/textview_weather" />
                 </RelativeLayout>
 
             </RelativeLayout>
